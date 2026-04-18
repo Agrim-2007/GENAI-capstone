@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+langgraph
+groq
+chromadb
+sentence-transformers
+pandas
+numpy
+scikit-learn
+plotly
