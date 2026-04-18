@@ -5,8 +5,8 @@ uvicorn
 langgraph
 groq
 chromadb
-sentence-transformers==2.2.2
-torch==2.2.2+cpu
+sentence-transformers
+torch==2.11.0+cpu
 pandas
 numpy
 scikit-learn
