@@ -1,8 +1,7 @@
 # Intelligent Crop Yield Prediction & Agentic Farm Advisory 🌾🤖
 
-[![Python](https://shields.io)](https://python.org)
-[![Flask](https://shields.io)](https://palletsprojects.com)
-[![Render](https://shields.io)](https://render.com)
+Python | Flask | Render
+
 
 An AI-driven agricultural analytics system that predicts crop yield using classical Machine Learning and provides autonomous farming advice via an Agentic AI workflow.
 
