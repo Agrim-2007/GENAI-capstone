@@ -42,20 +42,21 @@ This project addresses real-world agricultural challenges by bridging the gap be
     ```
 2. Environment Setup
 
-It is recommended to use Python 3.10.
-```
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
+   It is recommended to use Python 3.10.
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
+   
 3. API Configuration
   
-Create a .env file in the root directory and add your API keys:
-```
-GOOGLE_API_KEY=your_key_here
-# OR
-OPENAI_API_KEY=your_key_here
-```
+   Create a .env file in the root directory and add your API keys:
+   ```
+   GOOGLE_API_KEY=your_key_here
+   # OR
+   OPENAI_API_KEY=your_key_here
+   ```
 
 4. Running the Application
    ```
