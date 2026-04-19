@@ -90,6 +90,7 @@
         "documentation": {}
     },
     {
+<<<<<<< HEAD
         "label": "TypedDict",
         "importPath": "typing",
         "description": "typing",
@@ -303,6 +304,8 @@
         "documentation": {}
     },
     {
+=======
+>>>>>>> 47f7704 (Complete AgriMind project: React frontend with Vite/Tailwind, reference agent code, deployment config for Vercel proxy to hosted backend. Updated README with live demo instructions, ChromaDB reference clarified.)
         "label": "AgentRuntime",
         "kind": 6,
         "importPath": "src.reference_agent.graph",
@@ -517,6 +520,7 @@
         "peekOfCode": "YIELD_HIGH_THRESHOLD = 6.0\nclass FarmState(TypedDict):\n    farm_data: dict[str, Any]\n    yield_prediction: float\n    yield_category: str\n    retrieved_docs: List[str]\n    llm_reasoning: str\n    advisory_report: dict[str, Any]\n    error: str\ndef make_initial_state(farm_data: dict[str, Any]) -> FarmState:",
         "detail": "src.reference_agent.schemas",
         "documentation": {}
+<<<<<<< HEAD
     },
     {
         "label": "FarmState",
@@ -706,5 +710,7 @@
         "peekOfCode": "app = FastAPI(lifespan=lifespan)\nclass FarmInput(BaseModel):\n    Region: str\n    Soil_Type: str\n    Crop: str\n    Rainfall_mm: float\n    Temperature_Celsius: float\n    Fertilizer_Used: bool\n    Irrigation_Used: bool\n    Weather_Condition: str",
         "detail": "main",
         "documentation": {}
+=======
+>>>>>>> 47f7704 (Complete AgriMind project: React frontend with Vite/Tailwind, reference agent code, deployment config for Vercel proxy to hosted backend. Updated README with live demo instructions, ChromaDB reference clarified.)
     }
 ]

@@ -111,10 +111,10 @@ React/Vite interface with a hosted Agentic AI backend. The demo predicts crop
 yield, retrieves agronomy evidence through RAG, uses LangGraph-style agent
 orchestration, and returns a structured advisory report for farmers.
 
-Live frontend: add deployed URL after hosting  
-Hosted backend: https://genai-capstone-1.onrender.com  
-GitHub: https://github.com/Agrim-2007/GENAI-capstone  
-API contract verified: April 19, 2026
+**Live frontend:** [Update with Vercel/Netlify URL after deployment]  
+**Hosted backend:** https://genai-capstone-1.onrender.com  
+**GitHub:** https://github.com/Agrim-2007/GENAI-capstone  
+**API contract verified:** April 19, 2026
 
 ## Architecture
 
@@ -183,44 +183,22 @@ npm install
 npm run dev
 ```
 
-Open:
+Open: http://localhost:5173
 
-```text
-http://localhost:5173
-```
-
-Build check:
-
-```bash
-npm run build
-```
+Build check: `npm run build`
 
 Optional environment values:
-
-```bash
+```
 VITE_BACKEND_URL=https://genai-capstone-1.onrender.com
 VITE_API_BASE_URL=/api
 ```
 
-Use `/api` for local/Vercel proxy mode. Use the direct backend URL only after
-backend CORS is enabled.
-
 ## Backend Contract
 
-Endpoint behind the proxy:
+**Proxy:** `POST /api/predict`  
+**Direct:** `POST https://genai-capstone-1.onrender.com/predict`
 
-```text
-POST /api/predict
-```
-
-Hosted backend source endpoint:
-
-```text
-POST https://genai-capstone-1.onrender.com/predict
-```
-
-Request body:
-
+Request:
 ```json
 {
   "Region": "North",
@@ -235,19 +213,14 @@ Request body:
 }
 ```
 
-Expected response sections:
-
-- `crop_summary`
-- `field_status`
-- `yield_risk_level`
-- `recommended_actions`
-- `agronomic_references`
+Response sections:
+- `crop_summary`, `field_status`, `yield_risk_level`
+- `recommended_actions`, `agronomic_references`
 - `safety_disclaimer`
 
 ## Optional Reference Agent Setup
 
-The React frontend does not need `GROQ_API_KEY`; the hosted backend owns the LLM
-call. For local proof-of-implementation work in `src/reference_agent/`:
+React frontend doesn't need `GROQ_API_KEY`. For local `src/reference_agent/`:
 
 ```bash
 python -m venv .venv
@@ -256,43 +229,37 @@ pip install -r requirements-agent.txt
 export GROQ_API_KEY="your-groq-key"
 ```
 
-Local reference-agent execution also needs `crop_yield.csv`.
+Needs `crop_yield.csv`.
 
-## Rubric Mapping
+## Deployment (Frontend Only)
 
-| Evaluation component | How this repo addresses it |
-| --- | --- |
-| Technical Implementation | Shows yield prediction, ChromaDB RAG retrieval, LangGraph node flow, Groq prompting, structured JSON report design, and frontend rendering of RAG evidence and agent trace. |
-| GitHub Repository and Code Quality | Separates UI components, API client, schemas, constants, hooks, reference Agent/RAG code, examples, and deployment config. Secrets are env-driven. |
-| Hosted Link and Live Demo | React/Vite app can deploy publicly, proxies to the Render backend, handles loading/errors, persists results, validates inputs, and presents a polished responsive interface. |
+**Vercel (Recommended):**
+1. Push to GitHub.
+2. vercel.com → Import repo.
+3. Build: `npm run build`, Output: `dist`.
+4. `/api` proxies automatically.
 
-## Deployment
-
-Recommended for this React/Vite build: Vercel.
-
-1. Push the repo to GitHub.
-2. Import the repo in Vercel.
-3. Build command: `npm run build`.
-4. Output directory: `dist`.
-5. Keep `vercel.json` so `/api/:path*` rewrites to the Render backend.
-6. Add the deployed URL to this README.
-
-If deploying somewhere else, configure an equivalent `/api` reverse proxy or
-enable CORS on the FastAPI backend.
+**Alternatives:** Netlify, GitHub Pages, Render Static.
 
 ## Verification
-
-Commands run during implementation:
 
 ```bash
 npm run build
 curl -i http://localhost:5173/api/
-curl -i -X POST http://localhost:5173/api/predict \
-  -H "Content-Type: application/json" \
-  -d @examples/sample_payload.json
+curl -i -X POST http://localhost:5173/api/predict -H "Content-Type: application/json" -d @examples/sample_payload.json
 ```
 
+<<<<<<< HEAD
 Visual smoke checks were captured with Playwright for desktop and mobile, and
 the Three.js globe region was pixel-checked to confirm nonblank rendering.
 >>>>>>> 1a3626f (WebApp of working model)
+=======
+## Rubric Mapping
+
+| Component | Implementation |
+|-----------|---------------|
+| Technical | Yield model, ChromaDB RAG, LangGraph, Groq LLM, JSON report. |
+| Code Quality | UI components, API proxy, schemas, reference Agent code. |
+| Live Demo | Vercel frontend proxies hosted backend, responsive polished UI. |
+>>>>>>> 47f7704 (Complete AgriMind project: React frontend with Vite/Tailwind, reference agent code, deployment config for Vercel proxy to hosted backend. Updated README with live demo instructions, ChromaDB reference clarified.)
 
