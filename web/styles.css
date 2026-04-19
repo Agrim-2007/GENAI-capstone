@@ -1042,22 +1042,31 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .horizontal-section {
-  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(170, 255, 69, 0.08), transparent 28%),
+    linear-gradient(180deg, rgba(6, 8, 6, 0.98) 0%, rgba(13, 13, 13, 0.99) 100%);
+  isolation: isolate;
   overflow: hidden;
-  padding: 7rem 0;
+  padding: 7rem 1.25rem;
+  position: relative;
+  z-index: 1;
 }
 
 .horizontal-intro {
   margin: 0 auto 3rem;
   max-width: 1280px;
-  padding-inline: 1.25rem;
+  position: relative;
+  z-index: 2;
 }
 
-.horizontal-track {
-  display: flex;
+.how-grid {
+  display: grid;
   gap: 1rem;
-  padding-inline: max(1.25rem, calc((100vw - 1280px) / 2));
-  width: max-content;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  z-index: 2;
 }
 
 .process-card {
@@ -1070,7 +1079,7 @@ input[type='range']::-webkit-slider-thumb {
   overflow: hidden;
   padding: 2rem;
   position: relative;
-  width: min(78vw, 420px);
+  width: 100%;
 }
 
 .process-number {
@@ -1261,6 +1270,10 @@ input[type='range']::-webkit-slider-thumb {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .how-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .bento-card,
   .yield-card,
   .risk-card,
@@ -1287,7 +1300,8 @@ input[type='range']::-webkit-slider-thumb {
     line-height: 1.02;
   }
 
-  .section-shell {
+  .section-shell,
+  .horizontal-section {
     padding: 5rem 1rem;
   }
 
@@ -1309,7 +1323,8 @@ input[type='range']::-webkit-slider-thumb {
   .slider-grid,
   .feature-grid,
   .feature-stat-row,
-  .review-grid {
+  .review-grid,
+  .how-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1326,18 +1341,9 @@ input[type='range']::-webkit-slider-thumb {
     padding: 0.85rem;
   }
 
-  .horizontal-section {
-    min-height: auto;
-  }
-
-  .horizontal-track {
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    width: auto;
-  }
-
   .process-card {
-    flex: 0 0 84vw;
+    min-height: 360px;
+    width: 100%;
   }
 
   .magnetic-cursor,

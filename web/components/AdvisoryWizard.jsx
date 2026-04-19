@@ -74,7 +74,7 @@ export default function AdvisoryWizard({ defaultForm, isLoading, onSubmit }) {
   }
 
   return (
-    <div className="wizard-shell stagger-scope">
+    <div className="wizard-shell">
       <div className="wizard-top">
         <div>
           <p className="wizard-label">Validated advisory wizard</p>
@@ -384,7 +384,7 @@ export default function AdvisoryWizard({ defaultForm, isLoading, onSubmit }) {
 function StepFrame({ title, children }) {
   return (
     <motion.div
-      className="wizard-panel stagger-card"
+      className="wizard-panel"
       initial={{ opacity: 0, x: 30 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -30 }}
@@ -458,4 +458,3 @@ function ToggleCard({ name, control, title, description, icon: Icon }) {
     />
   );
 }
-
