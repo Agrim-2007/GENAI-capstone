@@ -117,7 +117,6 @@ orchestration, and returns a structured advisory report for farmers.
 **API contract verified:** April 19, 2026
 
 ## Architecture
-
 ```mermaid
 flowchart LR
     A["React + Vite UI"] --> B["/api proxy"]
