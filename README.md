@@ -117,17 +117,18 @@ orchestration, and returns a structured advisory report for farmers.
 **API contract verified:** April 19, 2026
 
 ## Architecture
+
 ```mermaid
 flowchart LR
-    A[React + Vite UI] --> B[/api proxy]
-    B --> C[FastAPI /predict on Render]
-    C --> D[Farm input validation]
-    D --> E[Yield prediction model]
-    E --> F[ChromaDB RAG retriever]
-    F --> G[LangGraph agent workflow]
-    G --> H[Groq Llama advisor]
-    H --> I[Structured advisory JSON]
-    I --> A
+    A[React + Vite UI] ---> B[/api proxy]
+    B ---> C[FastAPI /predict on Render]
+    C ---> D[Farm input validation]
+    D ---> E[Yield prediction model]
+    E ---> F[ChromaDB RAG retriever]
+    F ---> G[LangGraph agent workflow]
+    G ---> H[Groq Llama advisor]
+    H ---> I[Structured advisory JSON]
+    I ---> A
 ```
 
 The browser app calls `/api/predict`. Locally, Vite proxies that route to the
