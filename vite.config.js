@@ -5,8 +5,12 @@ import https from 'node:https';
 const backendUrl = process.env.VITE_BACKEND_URL || 'https://genai-capstone-1.onrender.com';
 
 export default defineConfig({
+  root: 'frontend',
+  publicDir: 'public',
   plugins: [react(), apiDevProxy()],
   build: {
+    outDir: '../dist',
+    emptyOutDir: true,
     chunkSizeWarningLimit: 650,
     rollupOptions: {
       output: {
